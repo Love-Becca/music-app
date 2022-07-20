@@ -8,7 +8,7 @@ header{
 
 .logo{
   width: 38px;
-  margin-right: 100px;
+  margin-right: 33vw;
 }
 
 .home{
@@ -30,10 +30,11 @@ main{
 
 .music-details{
   width: 136px;
+  height:170px;
   background-color: whitesmoke;
   border-radius: 0px 0px 5px 5px;
   margin-top: -25px;
-  padding: 0px 7px;
+  padding: 10px 7px;
 }
 
 .music-title{
@@ -41,13 +42,76 @@ main{
   font-size: 0.9rem;
 }
 
-.artist{
+.artist,.release_date{
   margin-top: -17px;
   font-size: 0.9rem;
+}
+
+.artist{
+  align-self:flex-start;
 }
 
 .cards{
   display: grid;
   grid-template-columns: auto auto;
-  gap: 10px
+  gap: 20px;
+  justify-content: center;
+}
+
+.like{
+  width: 20px;
+  height: 20px;
+  margin-left: 25px;
+  align-self: flex-end;
+  
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+.play_Button{
+  border-radius: 5px;
+  background-color:rgb(4, 91, 163);
+  outline: none;
+  border: none;
+  width: 7rem;
+  height: 2rem;
+  margin-top: -5px;
+  
+}
+
+.info{
+  color: white;
+}
+
+.new{
+  margin-top: -10px;
+}
+
+.title-and-like{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media screen and (min-width:500px){
+  .cards{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 3vw;
+    justify-content: center;
+  }
+  header{
+    display: flex;
+  }
+
+  .logo{
+    margin-right: 42vw
+  }
+
+
+  .home{
+    align-self:center;
+  }
 }
