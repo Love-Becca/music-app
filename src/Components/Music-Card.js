@@ -3,24 +3,33 @@ import like from "../assets/like.png"
 import favorite from "../assets/favorites.png"
 
 export default function Cards(props){
+    const clickedId = props.id
     const[isLike, setIsLike] = useState({
-        isFavorite : false,
-        id:props.id
+        isFavorite : props.isFavorite,
     })
     const [likedSong, setLikedSong] = useState([])   
 
-    function changeImage(){
-        isLike.isFavorite ? setIsLike(prevIsLike =>({
-            prevIsLike,
-            isFavorite:false
-        })) : setIsLike(prevIsLike =>({
-            prevIsLike,
-            isFavorite:true
-        }));
+    function saveLiked(){
+        setLikedSong(prevLikedSong=>{
+            return{
+                ...prevLikedSong,
+            }
+        })
     }
+     console.log();
+    function changeImage(){
+        setIsLike(prevIsLike =>{
+            return {
+                ...prevIsLike,
+                isFavorite:!isLike.isFavorite
+            }
+        })
+        saveLiked()
+    }
+
     return (
         <div>
-            <img src={props.image} alt="music" className="music-image" />
+            <img src={props.image} alt="music" className="music-image"/>
             <div className="music-details">
                 <h4 className="music-title">{props.title}</h4>
                 <div className="title-and-like">

@@ -3,10 +3,10 @@ import '../App.css'
 import Cards from "./Music-Card"
 
 export default function Body(){
-    const [data, setData] = useState([])
+    const [datas, setData] = useState([])
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQAVHd03sC09I4nwxPFIUTLAwPBAUIZz1s-pYA33SQjB8ncc5aOQDQpJV5muqe8-M6jHPV7DqYBZfqZRcA_dAOHaK4bEVTMF3enhqTooc7hFAXsZ1K16fJWLaGXkSB8jE71LxZhV-W7S9YSlDOQvFuNGSnf2DXQ-0EfHgLCW9OaoDH6iD0m829-GxxI5WnQ");
+        myHeaders.append("Authorization", "Bearer BQAtSO6TUqCC2V9YPB2s_28eHSoK9Z_BaL76tmPVExIb35C04xBLa9ne7Ay89i4xpT5Ve1zReDPmSH5a9X-5C9b6bEkpanHDS43abPThknfervglmKwZz4AenO6xTqonIcyqc90Vcg-odxvR7-daKxRqELtspYoNtt4coPHGQmiGU_lbMoT5sFYUvoYkpks");
 
         const requestOptions = {
             method: 'GET',
@@ -14,12 +14,12 @@ export default function Body(){
             redirect: 'follow'
         };
         
-        fetch("https://api.spotify.com/v1/browse/new-releases?country=NG&limit=50&offset=5", requestOptions)
+        fetch("https://api.spotify.com/v1/browse/new-releases?country=NG&limit=50&offset=5" , requestOptions)
         .then(response => response.json())
         .then(result => setData(result.albums.items))
         .catch(error => console.log('error', error))
     },[])
-    const cardsData = data.map(data=> 
+    const cardsData = datas.map(data=> 
     <Cards 
     key={data.id}
     id={data.id}
@@ -28,9 +28,8 @@ export default function Body(){
     artist={data.artists[0].name}
     release = {data.release_date}
     play={data.external_urls.spotify}
-    isFavorite = {true}
+    isFavorite = {false}
     />)
-    console.log(data)
     return(
         <main>
             <div className="info">
