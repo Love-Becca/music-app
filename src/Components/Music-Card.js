@@ -10,11 +10,12 @@ export default function Cards(props){
     const [likedSong, setLikedSong] = useState([])   
 
     function saveLiked(){
-        setLikedSong(prevLikedSong=>{
+        setLikedSong([...prevLikedSong=>{
             return{
                 ...prevLikedSong,
+                [likedSong.push(clickedId)]
             }
-        })
+        }])
     }
      console.log();
     function changeImage(){
