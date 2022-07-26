@@ -3,10 +3,13 @@ import '../App.css'
 import Cards from "./Music-Card"
 
 export default function Body(){
+
     const [datas, setData] = useState([])
+    const [likedSong, setLikedSong] = useState([]) 
+
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQDpypty5134e15DU6MM6lag5C6gjxnO-ztxY2b9G8zAfhHtJcV0ZypD0AqXbj320AycBhStYb12dd6gki3aaNLYX9vc6pjqQMc8poBFssZcfkYLIzVUo5mFY9F0GxAls9SqciGz8Do7kQVBNMeIUOnQvzt1bptdM32Wpxx0RHohaGa4c4UqMeUB2pS41dM");
+        myHeaders.append("Authorization", "Bearer BQBMxpfXLEDVBNxNpNEHBcZYcu-4uO-Lr0ZleXJWSXHif5f3XZ9aAksjM5Tl3NbujhGd0E9yEcULorVYT--3fU07aSJe1fobvdtJexTnSjL9xMaes5xf2dYWT-aYJGyD3c_608EL-P-Ffsd7l4aXznTqj1j3t9yUm895IFqIjfNdn24enk_Q5vVYdwJP-BQ");
 
         const requestOptions = {
             method: 'GET',
@@ -29,6 +32,8 @@ export default function Body(){
     release = {data.release_date}
     play={data.external_urls.spotify}
     isFavorite = {false}
+    setLikedSong = {setLikedSong}
+    likedSong={likedSong}
     />)
     return(
         <main>

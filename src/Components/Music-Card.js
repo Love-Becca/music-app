@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import like from "../assets/like.png"
 import favorite from "../assets/favorites.png"
 
@@ -6,18 +6,34 @@ export default function Cards(props){
     const clickedId = props.id
     const[isLike, setIsLike] = useState({
         isFavorite : props.isFavorite,
-    })
-    const [likedSong, setLikedSong] = useState([])   
+    }) 
+
+    const setLikedSong = props.setLikedSong
 
     function saveLiked(){
-        setLikedSong([...prevLikedSong=>{
-            return{
-                ...prevLikedSong,
-                [likedSong.push(clickedId)]
-            }
-        }])
+        setLikedSong([...props.likedSong, {props}])
+
+        // or write it as
+        // setLikedSong(prevState => [...prevState, {props}])
+
+        // the above is the same as 
+
+        // setLikedSong(prevLikedSong=>{
+        //     return[
+        //         ...prevLikedSong,
+        //         {props}
+        //     ]
+        // }])
+
+        // if your code is one line a return statement is not needed yeah? 
     }
-     console.log();
+
+    useEffect(() => {
+        console.log(props.likedSong) 
+    }, [props.likedSong])
+
+    
+
     function changeImage(){
         setIsLike(prevIsLike =>{
             return {
