@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import '../App.css'
 import Cards from "./Music-Card"
 
+
 export default function Body(){
 
     const [datas, setData] = useState([])
@@ -9,7 +10,7 @@ export default function Body(){
 
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQBMxpfXLEDVBNxNpNEHBcZYcu-4uO-Lr0ZleXJWSXHif5f3XZ9aAksjM5Tl3NbujhGd0E9yEcULorVYT--3fU07aSJe1fobvdtJexTnSjL9xMaes5xf2dYWT-aYJGyD3c_608EL-P-Ffsd7l4aXznTqj1j3t9yUm895IFqIjfNdn24enk_Q5vVYdwJP-BQ");
+        myHeaders.append("Authorization", "Bearer BQDLMHdZXJq8gk_OpCpme02n0i-BbBwjnYQDDndfOp0irBEvzSzl0xJ1XVrR6VB2EU8H5F_FihfH7yiTpgtfvz2gbAqvAHin_VUqjn47cSKYTHtJsZveT77tja1pbIY7zKB4OlfZ8u4_py1fwtJhMZOvvfuXbZ8pwmd2tVMOCvYjAo2S0OkpQM0O2W9Qaj4");
 
         const requestOptions = {
             method: 'GET',
@@ -35,6 +36,7 @@ export default function Body(){
     setLikedSong = {setLikedSong}
     likedSong={likedSong}
     />)
+
     return(
         <main>
             <div className="info">

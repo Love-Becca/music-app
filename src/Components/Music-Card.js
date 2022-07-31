@@ -3,36 +3,26 @@ import like from "../assets/like.png"
 import favorite from "../assets/favorites.png"
 
 export default function Cards(props){
-    const clickedId = props.id
+    const setLikedSong = props.setLikedSong
+    let collection = props.likedSong
     const[isLike, setIsLike] = useState({
         isFavorite : props.isFavorite,
     }) 
+    
 
-    const setLikedSong = props.setLikedSong
-
-    function saveLiked(){
-        setLikedSong([...props.likedSong, {props}])
-
-        // or write it as
-        // setLikedSong(prevState => [...prevState, {props}])
-
-        // the above is the same as 
-
-        // setLikedSong(prevLikedSong=>{
-        //     return[
-        //         ...prevLikedSong,
-        //         {props}
-        //     ]
-        // }])
-
-        // if your code is one line a return statement is not needed yeah? 
+    function saved(id){
+        if (!isLike.isFavorite) {
+            setLikedSong([...collection, id])
+        }
+        if(collection.includes(id)){
+            console.log("yes")
+        }
     }
 
-    useEffect(() => {
-        console.log(props.likedSong) 
-    }, [props.likedSong])
-
-    
+    useEffect(()=>{
+        console.log(collection)
+       
+    },[collection])
 
     function changeImage(){
         setIsLike(prevIsLike =>{
@@ -41,8 +31,10 @@ export default function Cards(props){
                 isFavorite:!isLike.isFavorite
             }
         })
-        saveLiked()
+        saved(props.id)
+        
     }
+
 
     return (
         <div>

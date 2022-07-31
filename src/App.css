@@ -4,6 +4,7 @@ header{
   font-size: 0.65rem;
   color: white;
   box-shadow: 0px 0px 7px rgb(121, 120, 120);
+  justify-content: space-between;
 }
 
 .logo{
@@ -13,6 +14,7 @@ header{
 
 .home{
   font-weight: 400;
+  margin-left: -40px;
 }
 
 main{
@@ -95,6 +97,64 @@ a{
   justify-content: space-evenly;
 }
 
+li{
+  list-style: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 5px;
+}
+.nav-box{
+  display: none;
+  /*disply: none;*/
+}
+
+.hamburger span{
+  border-bottom: 2px solid whitesmoke;
+  margin-bottom: 1px;
+  width: 1.5rem;
+  border-radius: 5px;
+}
+
+.hamburger{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 22px;
+  margin-left: 35vw;
+}
+.close{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-left: 34vw;
+  margin-top: 25px;
+}
+.close span{
+  border-bottom: 4px solid whitesmoke;
+  margin-bottom: 1px;
+  width: 1.5rem;
+  border-radius: 5px;
+}
+
+.close span:nth-child(1){
+  transform: rotate(310deg);
+}
+.close span:nth-child(3){
+  transform: rotate(50deg);
+  margin-top: -6px;
+}
+.close span:nth-child(2){
+  display: none;
+}
+
+.close-bar{
+  background-color: transparent;
+  width: 50vw;
+  position:fixed;
+  margin-left: -25px;
+  height: 100vh;
+  padding: 5px;
+}
 @media screen and (min-width:500px){
   .cards{
     display: grid;
@@ -114,4 +174,23 @@ a{
   .home{
     align-self:center;
   }
+}
+
+@media screen and (min-width:768px) {
+  .hamburger,.close{
+    display: none;
+  }
+  .nav-box{
+    position:relative;
+    background-color: transparent;
+    height: 35px;
+    margin-top: -2px;
+    display: block;
+  }
+  ul{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
 }
