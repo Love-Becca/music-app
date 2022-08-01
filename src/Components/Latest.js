@@ -10,7 +10,7 @@ export default function Body(){
 
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQDLMHdZXJq8gk_OpCpme02n0i-BbBwjnYQDDndfOp0irBEvzSzl0xJ1XVrR6VB2EU8H5F_FihfH7yiTpgtfvz2gbAqvAHin_VUqjn47cSKYTHtJsZveT77tja1pbIY7zKB4OlfZ8u4_py1fwtJhMZOvvfuXbZ8pwmd2tVMOCvYjAo2S0OkpQM0O2W9Qaj4");
+        myHeaders.append("Authorization", "Bearer BQAk-zE28PpCIu72r60pAXbYGKOhRKfWLBtf8X3RRW9OsR3bj0ErvzXfgj3L3WzTiXs8Q2tRbl2SscsoTo9EZxqmY9sNvrVAISE88vbxUdnNMuppKYQ_MuL8xK5ZA_P954-cpHnRBDYHNn4AKgQ0hDmeU2HUB-MtQ_FB0ltWgPDyw80rpSEEWOW390VnrM0");
 
         const requestOptions = {
             method: 'GET',
@@ -38,7 +38,7 @@ export default function Body(){
     />)
 
     return(
-        <main>
+        <main id="music">
             <div className="info">
                 <h4>Featured</h4>
                 <p className="new">New Release from Spotify</p>

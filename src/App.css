@@ -17,7 +17,7 @@ header{
   margin-left: -40px;
 }
 
-main{
+#music{
   background-color:rgb(4, 91, 163);
   padding: 5px 10px;
 
@@ -99,7 +99,7 @@ a{
 
 li{
   list-style: none;
-  color: white;
+  color: rgb(112, 110, 110);
   font-size: 1.2rem;
   padding: 5px;
 }
@@ -122,6 +122,12 @@ li{
   margin-top: 22px;
   margin-left: 35vw;
 }
+
+.hamburger span:nth-child(2){
+  transform: translate(8px, 0px);
+  width: 1rem;
+}
+
 .close{
   display: flex;
   flex-direction: column;
@@ -154,6 +160,143 @@ li{
   margin-left: -25px;
   height: 100vh;
   padding: 5px;
+}
+
+.event-body{
+  background-color: white;
+  margin-top: 1px;
+  padding: 10px;
+}
+
+.event-image{
+  height: 22rem;
+  width: 18.5rem;
+  border-radius: 20px;
+  margin-top: -50px;
+  
+}
+
+.event-date{
+  background-color: rgb(4, 91, 163);
+  width: 40px;
+  border: 2px solid white;
+  border-radius: 10px;
+  color: whitesmoke;
+  text-align: center;
+  height: 9.5vh;
+  position: relative;
+  top: 17px;
+  left: 15px;
+
+}
+.event-date-child{
+  margin: 0px;
+}
+
+.event-grid{
+  display: grid;
+  grid-template-columns: auto;
+  gap: 10px;
+  justify-content: center;
+}
+.strong{
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.event{
+  margin-top: -10px;
+}
+
+.event h4{
+  color: rgb(4, 91, 163);
+}
+.event-info{
+  color: rgb(138, 136, 136);
+  margin-top: -10px;
+}
+
+.live-event{
+  color: rgb(4, 91, 163);
+}
+
+.event-details{
+  background-color: rgba(138, 136, 136, 0.336);
+  border-radius: 20px;
+  padding: 5px;
+  border: 2px solid rgb(4, 91, 163);
+  position: relative;
+  bottom: 58px;
+}
+
+.event-location-details{
+  background-color: rgba(5, 130, 233, 0.555);
+  display: flex;
+  border-radius: 10px;
+  width: 15rem;
+  height: 2.9rem;
+  padding: 2px;
+}
+
+.event-location{
+  margin-top: -5px;
+  display: grid;
+  grid-template-rows: auto;
+  justify-content: right;
+}
+.location{
+  width: 32px;
+  height: 32px;
+  align-self: center;
+}
+
+.location-details{
+  border-right: 2px solid white;
+  font-size: 0.7rem;
+  text-align: right;
+  padding: 2px;
+  align-self: center;
+  color:whitesmoke;
+  font-weight: 600;
+}
+
+.event-time{
+  background-color: rgba(5, 130, 233, 0.555);
+  display: flex;
+  border-radius: 10px;
+  width: 15rem;
+  height: 2rem;
+  padding: 2px;
+  margin-top: 5px;
+  color: whitesmoke;
+  font-weight: 600;
+}
+
+.time{
+  width: 32px;
+  height: 32px;
+  align-self: center;
+}
+
+.event-time-details{
+  border-right: 2px solid white;
+  font-size: 0.7rem;
+  text-align: right;
+  padding: 2px;
+  align-self: center;
+  width: 85%;
+}
+
+.event-owner{
+  margin-top: -18px;
+  font-size: 0.8rem;
+  color: white;
+}
+
+.event-title{
+  margin-top: -5px;
+  font-size: 1.3rem;
+  color: rgb(4, 91, 163);
 }
 @media screen and (min-width:500px){
   .cards{
@@ -191,6 +334,10 @@ li{
     display: flex;
     flex-direction: row;
     gap: 1rem;
+  }
+
+  li{
+    color: white;
   }
 
 }
