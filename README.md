@@ -1,4 +1,4 @@
-###THIS IS A REACT PROJECT
+### `THIS IS A REACT PROJECT `
 
 #This project is a music app in which some features will be incoporated.
 ### `Firstly ` 
