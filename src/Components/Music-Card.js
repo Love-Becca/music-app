@@ -9,21 +9,23 @@ export default function Cards(props){
         isFavorite : props.isFavorite,
     }) 
     
-
+ //This function checks if isLike.isFavorite is true and push the id of the song into and array and also check if the id is existing 
+    
     function saved(id){
         if (!isLike.isFavorite) {
             setLikedSong([...collection, id])
         }
-        if(collection.includes(id)){
-            console.log("yes")
-        }
+
+        const check= collection.filter(song=>song!==id);
+        console.log(check);
     }
 
-    useEffect(()=>{
-        console.log(collection)
-       
-    },[collection])
+   
 
+    
+    //I didn't use useEffect because the goal is to push in the id only when isLike.isFavorite is true using the effect hook will push into the array an id whenever there is a change.
+    //useEffect(()=>{},[collection])
+ //This function is passed into the onClick eventListener which give a like icon once a user likes a song.
     function changeImage(){
         setIsLike(prevIsLike =>{
             return {

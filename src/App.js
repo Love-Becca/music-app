@@ -7,8 +7,8 @@ import Programs from './Components/Event'
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Programs />
+     <Header />
+      <Body />
     </div>
 
   //<Header />

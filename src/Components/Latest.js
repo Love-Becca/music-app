@@ -4,13 +4,14 @@ import Cards from "./Music-Card"
 
 
 export default function Body(){
-
+    // saves data from api
     const [datas, setData] = useState([])
     const [likedSong, setLikedSong] = useState([]) 
-
+    
+    // used to handle side effect of api calls 
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQAk-zE28PpCIu72r60pAXbYGKOhRKfWLBtf8X3RRW9OsR3bj0ErvzXfgj3L3WzTiXs8Q2tRbl2SscsoTo9EZxqmY9sNvrVAISE88vbxUdnNMuppKYQ_MuL8xK5ZA_P954-cpHnRBDYHNn4AKgQ0hDmeU2HUB-MtQ_FB0ltWgPDyw80rpSEEWOW390VnrM0");
+        myHeaders.append("Authorization", "Bearer BQDvwJu0TPdXIYRdSiUY7uLYtbrHQ4xiQwKldTdSdoLjNUZ9BIezyb19cRTFSiTg0zfxwLk2Sq3Af4GauEbl4AzeKP8FePY4R6DebvmuunzS-NPMTrmZmB6XhTaHAe2dZsObXy0JDFeuLnsoXxUjh1HHYh-5r3ayrg7-EF63v2g5S7Gq6EPmOvusesdOksU");
 
         const requestOptions = {
             method: 'GET',
@@ -23,6 +24,10 @@ export default function Body(){
         .then(result => setData(result.albums.items))
         .catch(error => console.log('error', error))
     },[])
+
+    //console.log(likedSong)
+
+    // iterate over the data in other to return music Cards with data
     const cardsData = datas.map(data=> 
     <Cards 
     key={data.id}
