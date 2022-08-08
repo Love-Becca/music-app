@@ -99,7 +99,6 @@ a{
 
 li{
   list-style: none;
-  color: rgb(112, 110, 110);
   font-size: 1.2rem;
   padding: 5px;
 }
@@ -298,6 +297,13 @@ li{
   font-size: 1.3rem;
   color: rgb(4, 91, 163);
 }
+
+.active{
+  color: rgb(223, 66, 92);
+}
+.link{
+  color: rgb(138, 136, 136);
+}
 @media screen and (min-width:500px){
   .cards{
     display: grid;
@@ -337,7 +343,7 @@ li{
     gap: 0.8rem;
   }
 
-  li{
+  .link{
     color: white;
   }
 

@@ -26,6 +26,7 @@ You may also see any lint errors in the console.
 Used this command to install react router,
 then I import BrowserRouter,Routes and Route into app.js and surrounded all components with the browser Router and the likes☝. With the react router I can navigate through pages.
 I ended up using nested route and its so cool.
+I used ternary operator to make the active page different i.e if the page is active color: this else that.
 http://localhost:3000/music -- Music
 http://localhost:3000/events -- Events
 

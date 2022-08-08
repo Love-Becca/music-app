@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../App.css'
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 export default function Navigate(){
     // this handles the nav bar toggle 
@@ -26,11 +26,11 @@ export default function Navigate(){
             </div>
             <div className={toggle.isOpen?"close-bar":"nav-box"}>
                 <ul>
-                    <Link to='/'><li>Home</li></Link> 
-                    <Link to='music'><li>Music</li></Link>
-                    <li>Lifestyle</li>
-                    <Link to='events'><li>Events</li></Link>
-                    <li>Collection</li>
+                    <NavLink to='/' className={({isActive}) =>isActive? 'active': 'link'}><li>Home</li></NavLink> 
+                    <NavLink to='music' className={({isActive}) =>isActive? 'active': 'link'}><li>Music</li></NavLink>
+                    <NavLink to='life' className={({isActive}) =>isActive? 'active': 'link'}><li>Lifestyle</li></NavLink>
+                    <NavLink to='events' className={({isActive}) =>isActive? 'active': 'link'}><li>Events</li></NavLink>
+                    <NavLink to='collect' className={({isActive}) =>isActive? 'active': 'link'}><li>collection</li></NavLink>
                 </ul>
             </div>
             
