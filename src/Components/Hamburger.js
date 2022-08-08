@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import '../App.css'
-
+import {Link} from 'react-router-dom'
 
 export default function Navigate(){
+    // this handles the nav bar toggle 
     const [toggle, setToggle] = useState({
         isOpen: false
     })
@@ -25,10 +26,10 @@ export default function Navigate(){
             </div>
             <div className={toggle.isOpen?"close-bar":"nav-box"}>
                 <ul>
-                    <li>Home</li>
-                    <li>Music</li>
+                    <Link to='/'><li>Home</li></Link> 
+                    <Link to='music'><li>Music</li></Link>
                     <li>Lifestyle</li>
-                    <li>Events</li>
+                    <Link to='events'><li>Events</li></Link>
                     <li>Collection</li>
                 </ul>
             </div>

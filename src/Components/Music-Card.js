@@ -19,10 +19,6 @@ export default function Cards(props){
         const check= collection.filter(song=>song!==id);
         console.log(check);
     }
-
-   
-
-    
     //I didn't use useEffect because the goal is to push in the id only when isLike.isFavorite is true using the effect hook will push into the array an id whenever there is a change.
     //useEffect(()=>{},[collection])
  //This function is passed into the onClick eventListener which give a like icon once a user likes a song.

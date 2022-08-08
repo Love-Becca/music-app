@@ -11,7 +11,7 @@ export default function Body(){
     // used to handle side effect of api calls 
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQDvwJu0TPdXIYRdSiUY7uLYtbrHQ4xiQwKldTdSdoLjNUZ9BIezyb19cRTFSiTg0zfxwLk2Sq3Af4GauEbl4AzeKP8FePY4R6DebvmuunzS-NPMTrmZmB6XhTaHAe2dZsObXy0JDFeuLnsoXxUjh1HHYh-5r3ayrg7-EF63v2g5S7Gq6EPmOvusesdOksU");
+        myHeaders.append("Authorization", "Bearer BQBn7-G2HDms2-YnwXiEJ9Orwwod4Hmq60FJ0b2z5wcDxayxsA_Se9UuamkFr67kDuvZO1u0p5cXEw6KnEM5OipaMjXCdk8W2qrYeG7QhVIntg6IyVoYwuIae9YgKnOsgMLIylNkHgxKlkzN7GhuQuA0CKYqP1xVhaf3pqkyoVH1m-fCS_o8xPkKcN9w-IM");
 
         const requestOptions = {
             method: 'GET',
