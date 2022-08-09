@@ -28,7 +28,7 @@ export default function Navigate(){
                 <ul>
                     <NavLink to='/' className={({isActive}) =>isActive? 'active': 'link'}><li>Home</li></NavLink> 
                     <NavLink to='music' className={({isActive}) =>isActive? 'active': 'link'}><li>Music</li></NavLink>
-                    <NavLink to='life' className={({isActive}) =>isActive? 'active': 'link'}><li>Lifestyle</li></NavLink>
+                    <NavLink to='quotes' className={({isActive}) =>isActive? 'active': 'link'}><li>Quotes</li></NavLink>
                     <NavLink to='events' className={({isActive}) =>isActive? 'active': 'link'}><li>Events</li></NavLink>
                     <NavLink to='collect' className={({isActive}) =>isActive? 'active': 'link'}><li>collection</li></NavLink>
                 </ul>

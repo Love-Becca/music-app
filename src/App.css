@@ -304,6 +304,17 @@ li{
 .link{
   color: rgb(138, 136, 136);
 }
+
+.quotes{
+  width:80vw;
+  height: 80vh;
+  background-color: rgba(196, 196, 196, 0.664);
+  border-radius: 10px 0px 10px 10px;
+  margin: 0 auto;
+  padding: 5px 10px;
+  margin-top: 20px;
+  
+}
 @media screen and (min-width:500px){
   .cards{
     display: grid;
