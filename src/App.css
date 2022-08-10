@@ -307,7 +307,7 @@ li{
 
 .quotes{
   width:90vw;
-  height: 22vh;
+  height: 17vh;
   background-color: rgb(4, 91, 163);
   color: whitesmoke;
   border-radius: 10px 0px 10px 10px;
@@ -321,6 +321,19 @@ li{
   background-color: rgba(196, 196, 196, 0.664);
   color: rgb(4, 91, 163);
 }
+
+.quotes:hover{
+  opacity: 0.65;
+}
+
+.quotes-main{
+  padding: 5px;
+}
+
+blockquote{
+  margin-top: 0px;
+}
+
 @media screen and (min-width:500px){
   .cards{
     display: grid;
@@ -371,7 +384,7 @@ li{
 
   .quotes-section{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     gap: 1px;
   }
 
@@ -380,5 +393,5 @@ li{
     height: 13vh;
   }
 
-
+  
 }

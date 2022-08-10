@@ -10,11 +10,11 @@ const Quotes = () => {
     const quotes = data.map(quote=>
     <QuotesCards
         key={nanoid()}
-        author={quote.author}
-        text= {quote.text}
+        quote={quote}
+        id={nanoid}
     />)
     return (
-    <main>
+    <main className='quotes-main'>
         <h4>Get Motivated</h4>
         <div className='quotes-section'>
             {quotes}  

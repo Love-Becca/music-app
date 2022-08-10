@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-const QuotesCards = (props) => {
+const QuotesCards = ({quote}) => {
     return (
     <main className='quotes'>
         <div className='quote-container'>
-            <blockquote>{props.text}</blockquote>
-            <p><cite>-{props.author}</cite></p>
+            <blockquote>{quote.text}</blockquote>
+            <p><cite>-{quote.author}</cite></p>
         </div>
     </main>  
     );

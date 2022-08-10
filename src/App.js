@@ -8,23 +8,26 @@ import Error from './Components/Error';
 import Home from './Components/Home';
 import Quotes from './Components/Quotes';
 import QuotesContextProvider from './Context/QuotesContext';
+import MusicContextProvider from './Context/MusicContext'
 
 function App() {
   return (
     <div className="App">
-      <QuotesContextProvider>
-        <Router>
-          <Routes>
-            <Route path='/' element={<Header />}>
-              <Route index element={<Home />}/>
-              <Route path='music' element={<Body />}/>
-              <Route path='events' element={<Programs />}/>
-              <Route path='quotes' element={<Quotes />}/>
-              <Route path='*' element={<Error />}/>
-            </Route>
-          </Routes>
-        </Router>
-      </QuotesContextProvider>
+      <MusicContextProvider>
+        <QuotesContextProvider>
+          <Router>
+            <Routes>
+              <Route path='/' element={<Header />}>
+                <Route index element={<Home />}/>
+                <Route path='music' element={<Body />}/>
+                <Route path='events' element={<Programs />}/>
+                <Route path='quotes' element={<Quotes />}/>
+                <Route path='*' element={<Error />}/>
+              </Route>
+            </Routes>
+          </Router>
+        </QuotesContextProvider>
+      </MusicContextProvider>
     </div>
   );
 }
