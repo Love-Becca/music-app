@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState,useEffect } from "react";
 import like from "../assets/like.png"
 import favorite from "../assets/favorites.png"
 
@@ -6,19 +6,21 @@ export default function Cards({song}){
     const[isLike, setIsLike] = useState({
         isFavorite : false,
     }) 
-    // saves data from api
     const [likedSong, setLikedSong] = useState([]) 
+    
     //This function checks if isLike.isFavorite is true and push the id of the song into and array and also check if the id is existing 
-
     function saved(id){
-        if (isLike.isFavorite) {
-            setLikedSong([...likedSong, id])
+        if (!isLike.isFavorite) {
+            setLikedSong(prevLikedSong=>[...prevLikedSong,id])
         }
+         console.log(likedSong);
         // const check= likedSong.filter(song=>song!==id);
         // console.log(check);
     }
     //I didn't use useEffect because the goal is to push in the id only when isLike.isFavorite is true using the effect hook will push into the array an id whenever there is a change.
-    //useEffect(()=>{},[collection])
+    useEffect(()=>{
+
+    },[likedSong])
     //This function is passed into the onClick eventListener which give a like icon once a user likes a song.
     function changeImage(){
         setIsLike(prevIsLike =>{

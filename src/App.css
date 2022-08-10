@@ -334,6 +334,11 @@ blockquote{
   margin-top: 0px;
 }
 
+label, input{
+  display: block;
+}
+
+
 @media screen and (min-width:500px){
   .cards{
     display: grid;
