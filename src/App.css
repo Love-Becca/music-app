@@ -339,6 +339,7 @@ label{
   display: block;
   color: rgb(4, 91, 163);
   font-weight: 500;
+  margin-top: 10px;
 }
 
 input{
@@ -348,7 +349,6 @@ input{
   border: 2px solid rgba(196, 196, 196, 0.664);
   border-radius: 5px;
   outline: none;
-  margin-bottom: 15px;
 }
 
 .form{
@@ -358,13 +358,14 @@ input{
 }
 
 #sign-in{
+  display: block;
   background-color: rgb(4, 91, 163);
   border: none;
   width: 30vw;
   height: 8vh;
   color: rgb(228, 227, 227);
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin: 5px 0px;
   font-size: 1rem;
 }
 .welcome-txt{
@@ -374,6 +375,11 @@ input{
 
 form{
   padding: 10px;
+}
+
+error{
+  font-size: 1rem;
+  color: red;
 }
 @media screen and (min-width:500px){
   .cards{
@@ -453,7 +459,6 @@ form{
   input{
     width: 28vw;
     height: 5vh;
-    margin-bottom: 20px;
   }
 
   label{
@@ -466,7 +471,8 @@ form{
   }
 
   #sign-in{
-    width: 12vw;
+    width: 10vw;
+    height: 5vh;
   }
   
 

@@ -1,78 +1,55 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 import welcome from '../assets/welcome.jpg';
 import '../App.css'
 
 const Home = () => {
+    const{register, formState:{errors}, handleSubmit} = useForm()
+    const onSubmit = (data) => console.log(data);
     const maxLength = '15'
-    const[form, setForm] = useState({
-        firstName:"",
-        lastName:"",
-        email:"",
-        password: ""
-    })
-
-    function handleChange(event){
-        const {name, value} = event.target
-        setForm(prevForm=>{
-            return{
-                ...prevForm,
-                [name]:value
-            }
-        })
-    }
-
-    function handleSubmit(event){
-        event.preventDefault()
-        if(form.email === "" || form.password===""){
-            window.alert("write something")
-        }
-    }
+   
     return ( 
     <main className='form-page'>
         <h2 className='welcome-txt'>Welcome!</h2>
         <div className='form'> 
             <img src={welcome} alt='welcome'  className='welcome'/>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor='first-name'>First Name:</label>
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <label>First Name:</label>
                 <input 
-                    type='text' 
-                    name='firstName' 
-                    id='first-name'
+                    type='text'
                     placeholder='Type your name'
-                    onChange={handleChange}
-                    value={form.firstName} 
+                    {...register("name", {required: true})}
                     maxLength={maxLength}          
                 />
-                <label htmlFor='last-name'>Last Name:</label>
+                <error>{errors.name?.type==='required'&&'First Name is required'}</error>
+                <label >Last Name:</label>
                 <input 
-                    type='text' 
-                    name='lastName' 
-                    id='last-name'
+                    type='text'
                     placeholder='Type your name'
-                    onChange={handleChange}
-                    value={form.lastName}
+                    {...register("lastname", {required: true})}
                     maxLength={maxLength}
                 />
-                <label htmlFor='email'>Email:</label>
+                <error>{errors.lastname?.type==='required'&&'Last Name is required'}</error>
+                <label>Email:</label>
                 <input 
                     type='email' 
-                    name='email'
-                    id='email' 
                     placeholder='Type your email'
-                    onChange={handleChange}
-                    value={form.email}
+                    {...register("email", {required: true, pattern:/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/})}
                 />
-                <label htmlFor='password'>Password:</label>
+                <error>{errors.email?.type==='required'&&'Email is required'}</error>
+                <error>{errors.email?.type==='pattern'&&'Entered email in wrong pattern'}</error>
+                <label>Password:</label>
                 <input 
                     type='password' 
-                    name='password' 
-                    id='password'
                     placeholder='Type your password'
-                    onChange={handleChange}
-                    value={form.password}
-                    minLength='5'
-                    maxLength={maxLength}
+                    {...register("password", {required: true, minLength:5, maxLength:15})}
+                    // onChange={handleChange}
+                    // value={form.password}
                 />
+                <error>
+                    {errors.password?.type === 'minLength'&&'Enter digit more than 5'}
+                    {errors.password?.type === 'maxLength'&&'Enter digit less than 15'}
+                </error>
                 <button id='sign-in'>Sign up</button>
             </form>
         </div>
