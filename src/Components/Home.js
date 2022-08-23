@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import welcome from '../assets/welcome.png';
 
 const Home = () => {
     const maxLength = '15'
@@ -30,6 +31,7 @@ const Home = () => {
     return ( 
     <main>
         <div className='form'>
+            <img src={welcome} alt='welcome' />
             <form onSubmit={handleSubmit}>
                 <label htmlFor='first-name'>First Name:</label>
                 <input 
