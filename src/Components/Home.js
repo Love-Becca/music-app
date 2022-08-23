@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import welcome from '../assets/welcome.png';
+import welcome from '../assets/welcome.jpg';
+import '../App.css'
 
 const Home = () => {
     const maxLength = '15'
@@ -18,8 +19,6 @@ const Home = () => {
                 [name]:value
             }
         })
-
-        console.log(form);
     }
 
     function handleSubmit(event){
@@ -29,9 +28,10 @@ const Home = () => {
         }
     }
     return ( 
-    <main>
-        <div className='form'>
-            <img src={welcome} alt='welcome' />
+    <main className='form-page'>
+        <h2 className='welcome-txt'>Welcome!</h2>
+        <div className='form'> 
+            <img src={welcome} alt='welcome'  className='welcome'/>
             <form onSubmit={handleSubmit}>
                 <label htmlFor='first-name'>First Name:</label>
                 <input 
@@ -73,7 +73,7 @@ const Home = () => {
                     minLength='5'
                     maxLength={maxLength}
                 />
-                <button>Sign up</button>
+                <button id='sign-in'>Sign up</button>
             </form>
         </div>
        

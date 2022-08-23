@@ -5,6 +5,7 @@
   color: white;
   box-shadow: 0px 0px 7px rgb(121, 120, 120);
   justify-content:space-between;
+  font-family: 'Readex Pro';
 }
 
 .logo{
@@ -104,7 +105,7 @@ li{
 }
 .nav-box{
   display: none;
-  /*disply: none;*/
+  
 }
 
 .hamburger span{
@@ -334,11 +335,46 @@ blockquote{
   margin-top: 0px;
 }
 
-label, input{
+label{
   display: block;
+  color: rgb(4, 91, 163);
+  font-weight: 500;
 }
 
+input{
+  display: block;
+  width: 90vw;
+  height: 5vh;
+  border: 2px solid rgba(196, 196, 196, 0.664);
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 15px;
+}
 
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#sign-in{
+  background-color: rgb(4, 91, 163);
+  border: none;
+  width: 30vw;
+  height: 8vh;
+  color: rgb(228, 227, 227);
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+.welcome-txt{
+  display: none;
+  color:rgb(4, 91, 163);
+}
+
+form{
+  padding: 10px;
+}
 @media screen and (min-width:500px){
   .cards{
     display: grid;
@@ -365,6 +401,7 @@ label, input{
     height: 13vh;
   }
 }
+
 
 @media screen and (min-width:768px) {
   .hamburger,.close{
@@ -397,6 +434,41 @@ label, input{
     width:40vw;
     height: 13vh;
   }
+
+  .form{
+    margin: 0 auto;
+    width: 60vw;
+    flex-direction: row-reverse;
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 7px rgba(196, 196, 196, 0.664);
+
+  }
+  .welcome{
+    width: 30vw;
+    border-radius: 0px 10px 10px 0px;
+    margin-left: 0px;
+  }
+
+  input{
+    width: 28vw;
+    height: 5vh;
+    margin-bottom: 20px;
+  }
+
+  label{
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .welcome-txt{
+    display: block;
+  }
+
+  #sign-in{
+    width: 12vw;
+  }
+  
 
   
 }
