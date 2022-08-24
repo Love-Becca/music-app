@@ -2,14 +2,20 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import welcome from '../assets/welcome.jpg';
 import '../App.css'
-//import {useHistory} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
     const {register, formState:{errors}, handleSubmit,getValues} = useForm()
     const onSubmit = (data) => console.log(data);
-    const maxLength = '15'
+    const maxLength = '15';
+    const navigate = useNavigate()
+
+    function checkSubmit(){
+        const values = getValues();
+        values.name===''|| values.email===''|| values.password===''|| values.lastname==='' ? navigate('/') : navigate('/music');
+    }
    
-    return ( 
+    return (
         <main className='form-page'>
             <h2 className='welcome-txt'>Welcome!</h2>
             <div className='form'> 
@@ -50,11 +56,7 @@ const Home = () => {
                         {errors.password?.type === 'minLength'&&'Enter digit more than 5'}
                         {errors.password?.type === 'maxLength'&&'Enter digit less than 15'}
                     </error>
-                    <button id='sign-in' onClick={() => {
-                        const values = getValues();
-                        console.log(values.name);
-                        }}>Sign up
-                    </button>
+                    <button id='sign-in' onClick={() => checkSubmit()}>Sign up</button>
                 </form>
             </div>
         </main>
