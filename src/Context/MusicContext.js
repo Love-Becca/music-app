@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState} from 'react';
-
 export const MusicContext = createContext();
 
 const MusicContextProvider = (props) => {
@@ -7,7 +6,7 @@ const MusicContextProvider = (props) => {
     // used to handle side effect of api calls 
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQBnMQuQE5wwlA0ms8ZD4KV89W0UlkipsH1n6GBdfF3BPTf-JOeZhSGhbTC1OEtumqS0cIDHYNePxbG26PAocZDVTZ_lOGl6P9v22mCg94gH2YPakhjL_ZZM0KtHAQJv64TgZDTsf_-jAhHrqu6uHBOikymIzZA8A1EQ-js6lHKM_0qIRh0UA0XB7gTLxX0");
+        myHeaders.append("Authorization", "Bearer BQD5s91gNhljFDTE-9ELnEaHWMARSKE1glPTNKgWljBxIvoO61cTKN7ougVPfDFC7CxeCY9iMJhhGcM-O0eXazW1wzs1sF_nOT1ivNy8v5lSHP8cja74tLnEhcK_9gUjkRvW_73H2Rxhu4IF8onHONZnjeJ-mKPAS4kPdIX68L1zYaiNcsY4ps0qu2UXDpA");
 
         const requestOptions = {
             method: 'GET',
@@ -15,7 +14,7 @@ const MusicContextProvider = (props) => {
             redirect: 'follow'
         };
         
-        fetch("https://api.spotify.com/v1/browse/new-releases?country=NG&limit=50&offset=10" , requestOptions)
+        fetch("https://api.spotify.com/v1/browse/new-releases?country=NG&limit=50&offset=10", requestOptions)
         .then(response => response.json())
         .then(result => setData(result.albums.items))
         .catch(error => console.log('error', error))
