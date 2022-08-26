@@ -2,9 +2,11 @@ import React, { createContext, useEffect, useState} from 'react';
 export const MusicContext = createContext();
 
 const MusicContextProvider = (props) => {
-    const [data, setData] = useState([])
+    //Saves Api Data
+    const [data, setData] = useState([]);
+    //Saves liked songs
+    const [likedSong, setLikedSong] = useState([]);
     // used to handle side effect of api calls 
-    const [likedSong, setLikedSong] = useState([])
     useEffect(()=>{
         const myHeaders = new Headers();
         myHeaders.append("Authorization", "Bearer BQAeh8qZeMkOfsbMoKWd9_sHC4qNNMHFPEzYAKWqoCnKEgqEz-pLwOacnnF_rxVDqxOsxxHYxt403HRbDImRy3w1HaHlt0JGDlpDCyuOhQFjkqN0H-DYS_XsW8vUiIvC69ZPlu3CdJXWAx0hiFQeWPoMnj8N6ITfFCXgEikJQDTiRX4C0GBCl8rVnnegLgQ");

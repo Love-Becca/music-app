@@ -1,20 +1,16 @@
-import React, { useState,useEffect } from "react";
+import React, { useState} from "react";
 import like from "../assets/like.png"
 import favorite from "../assets/favorites.png"
 
 export default function Cards({song,likedSong,setLikedSong}){
+    //saves the toggle state
     const[isLike, setIsLike] = useState({
         isFavorite : false,
     }) 
-    
-    //This function checks if isLike.isFavorite is true and push the id of the song into and array and also check if the id is existing 
+    //This function checks if isLike.isFavorite is true and push the id of the song into an array
     function saved(id){
         if (!isLike.isFavorite) {
             setLikedSong(prevLikedSong=>[...prevLikedSong,id])
-            if (likedSong.includes(id)){
-                likedSong.filter(()=>!id);
-                console.log(likedSong);
-            }
         }
     }
     //This function is passed into the onClick eventListener which give a like icon once a user likes a song.
