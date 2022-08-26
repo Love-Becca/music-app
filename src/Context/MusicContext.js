@@ -4,9 +4,10 @@ export const MusicContext = createContext();
 const MusicContextProvider = (props) => {
     const [data, setData] = useState([])
     // used to handle side effect of api calls 
+    const [likedSong, setLikedSong] = useState([])
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQA4tJprVsSt0OPwp1_qIvuj-FyDs0MBRwkwiTwqBV-gLUnUV8sMKMEUBblCHNFwmBoChCMSv6KeBiRsPabTDdwI6sVjgb4eGtxv7Giws_1_h-7DWunRj9kgE-O3oFH2tGw82WNGAUsReUrMRZHXS_LNAfvtDb65UEFDW3Yj9gb36xtSEk2y3JwnEcn3TlM");
+        myHeaders.append("Authorization", "Bearer BQAeh8qZeMkOfsbMoKWd9_sHC4qNNMHFPEzYAKWqoCnKEgqEz-pLwOacnnF_rxVDqxOsxxHYxt403HRbDImRy3w1HaHlt0JGDlpDCyuOhQFjkqN0H-DYS_XsW8vUiIvC69ZPlu3CdJXWAx0hiFQeWPoMnj8N6ITfFCXgEikJQDTiRX4C0GBCl8rVnnegLgQ");
 
         const requestOptions = {
             method: 'GET',
@@ -21,7 +22,7 @@ const MusicContextProvider = (props) => {
     },[])
 
     return (
-        <MusicContext.Provider value={{data}}>
+        <MusicContext.Provider value={{data,likedSong,setLikedSong}}>
             {props.children}
         </MusicContext.Provider>
     );

@@ -4,16 +4,16 @@ import Cards from "./Music-Card"
 import {MusicContext} from "../Context/MusicContext"
 
 export default function Body(){
-    const {data} = useContext(MusicContext)
-    //console.log(likedSong)
-
+    const {data,likedSong,setLikedSong} = useContext(MusicContext)
     // iterate over the data in other to return music Cards with data
     const cardsData = data.map(data=> 
     <Cards 
     key={data.id}
     song={data}
+    likedSong={likedSong}
+    setLikedSong ={setLikedSong}
     />) 
-
+    
     return(
         <main id="music">
             <div className="info">
