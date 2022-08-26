@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import '../App.css'
 import Cards from "./Music-Card"
 import {MusicContext} from "../Context/MusicContext"

@@ -1,4 +1,4 @@
-import React, { useContext, useState,useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import like from "../assets/like.png"
 import favorite from "../assets/favorites.png"
 
