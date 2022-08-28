@@ -4,11 +4,10 @@ export const MusicContext = createContext();
 const MusicContextProvider = (props) => {
     //Saves Api Data
     const [data, setData] = useState([]);
-    
+
     //Saves liked songs
     const [likedSong, setLikedSong] = useState([]);
     console.log(likedSong);
-    const[values, setValues] = useState({})
 
     // used to handle side effect of api calls 
     useEffect(()=>{
@@ -28,7 +27,7 @@ const MusicContextProvider = (props) => {
     },[])
 
     return (
-        <MusicContext.Provider value={{data,likedSong,setLikedSong,setValues, values}}>
+        <MusicContext.Provider value={{data,likedSong,setLikedSong}}>
             {props.children}
         </MusicContext.Provider>
     );

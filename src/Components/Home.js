@@ -3,10 +3,10 @@ import { useForm } from 'react-hook-form';
 import welcome from '../assets/welcome.jpg';
 import '../App.css'
 import { useNavigate } from 'react-router-dom';
-import { MusicContext } from '../Context/MusicContext';
+import { FormContext } from '../Context/FormContext';
 
 const Home = () => {
-    const {setValues} = useContext(MusicContext)
+    const {setValues} = useContext(FormContext)
     const {register, formState:{errors}, handleSubmit,getValues} = useForm()
     const onSubmit = (data) => console.log(data);
     const maxLength = '15';

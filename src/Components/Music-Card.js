@@ -7,14 +7,12 @@ export default function Cards({song,likedSong,setLikedSong}){
     const[isLike, setIsLike] = useState({
         isFavorite : false,
     }) 
+
     //This function checks if isLike.isFavorite is true and push the id of the song into an array
     function saved(id){
-        if (!isLike.isFavorite) {
-            setLikedSong(prevLikedSong=>[...prevLikedSong,id])
-        }else{
-            setLikedSong(likedSong.filter(item=>item !== id))
-        }
+        !isLike.isFavorite ? setLikedSong(prevLikedSong=>[...prevLikedSong,id]) : setLikedSong(likedSong.filter(item=>item !== id));
     }
+
     //This function is passed into the onClick eventListener which give a like icon once a user likes a song.
     function changeImage(){
         setIsLike(prevIsLike =>{
@@ -25,6 +23,7 @@ export default function Cards({song,likedSong,setLikedSong}){
         })
         saved(song.id)
     }
+    
     return (
         <div>
             <img src={song.images[0].url} alt="music" className="music-image"/>
