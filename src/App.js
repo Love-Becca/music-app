@@ -10,6 +10,7 @@ import Quotes from './Components/Quotes';
 import QuotesContextProvider from './Context/QuotesContext';
 import MusicContextProvider from './Context/MusicContext'
 import FormContextProvider from './Context/FormContext';
+import Collection from './Components/Collection'
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                   <Route path='music' element={<Body />}/>
                   <Route path='events' element={<Programs />}/>
                   <Route path='quotes' element={<Quotes />}/>
+                  <Route path='collection' element={<Collection/>}/>
                   <Route path='*' element={<Error />}/>
                 </Route>
               </Routes>
