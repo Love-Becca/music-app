@@ -4,16 +4,16 @@ export const MusicContext = createContext();
 const MusicContextProvider = (props) => {
     //Saves Api Data
     const [data, setData] = useState([]);
+    
     //Saves liked songs
     const [likedSong, setLikedSong] = useState([]);
     console.log(likedSong);
-    //unique like songs 
-    const collection = likedSong.filter((item,pos)=>likedSong.indexOf(item)===pos)
-    console.log(collection);
+    const[values, setValues] = useState({})
+
     // used to handle side effect of api calls 
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQAfG1nAhNTkpmlx30qwB2D0JBRyNgfmpIiJcHPjc5GRe655VnHxxrjPB2Zv9-of1WSa9RIiT12KHUmmF-_otpNUr2L059MNObe8aZPKxGyKGjTIk4ycZwIsiCFJoBb51Cy_b6jie9l2W_X9hKg7ZGZmu5FVl3O4EhutXzF37Rf94LmIIc6Tucg90xTcH2I");
+        myHeaders.append("Authorization", "Bearer BQDblEMmxNmPcgk5uewA1GUV63EGkDAaf0Xc_O_8RPZoWTLUuo1DTwsFbjpCDY-z5DAb-W0Ac1pBJQ1-IBx3QURSB5TvndiOqfXa1iZEoVYtf3AM4TmcXFhAK7rIDBi7ERUORfrlkx0C-MxqHbmNAhfWZcCaeybkv9y-OXlV3ZVyFct-CDH532W7fo2SnHs");
 
         const requestOptions = {
             method: 'GET',
@@ -28,7 +28,7 @@ const MusicContextProvider = (props) => {
     },[])
 
     return (
-        <MusicContext.Provider value={{data,likedSong,setLikedSong,collection}}>
+        <MusicContext.Provider value={{data,likedSong,setLikedSong,setValues, values}}>
             {props.children}
         </MusicContext.Provider>
     );

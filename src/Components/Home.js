@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import welcome from '../assets/welcome.jpg';
 import '../App.css'
 import { useNavigate } from 'react-router-dom';
+import { MusicContext } from '../Context/MusicContext';
 
 const Home = () => {
+    const {setValues} = useContext(MusicContext)
     const {register, formState:{errors}, handleSubmit,getValues} = useForm()
     const onSubmit = (data) => console.log(data);
     const maxLength = '15';
@@ -13,6 +15,7 @@ const Home = () => {
     function checkSubmit(){
         const values = getValues();
         values.name===''|| values.email===''|| values.password===''|| values.lastname==='' ? navigate('/') : navigate('/music');
+        setValues(values)
     }
    
     return (

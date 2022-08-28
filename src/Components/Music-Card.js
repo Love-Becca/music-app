@@ -11,6 +11,8 @@ export default function Cards({song,likedSong,setLikedSong}){
     function saved(id){
         if (!isLike.isFavorite) {
             setLikedSong(prevLikedSong=>[...prevLikedSong,id])
+        }else{
+            setLikedSong(likedSong.filter(item=>item !== id))
         }
     }
     //This function is passed into the onClick eventListener which give a like icon once a user likes a song.
