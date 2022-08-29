@@ -382,6 +382,36 @@ error{
   color: red;
 
 }
+
+.favorite-heading{
+  display: flex;
+  place-content:space-between;
+}
+
+.music-banner{
+  border-radius: 15px;
+}
+
+.favorite-music-title{
+  text-overflow:ellipsis;
+}
+
+.favorite-music-display{
+  max-width: 180px;
+}
+
+.favorite-music-display h4{
+  margin-top: 0px;
+}
+
+.favorite-music-display p{
+  margin-top: -20px;
+  color:rgb(138, 136, 136);
+}
+
+.collection{
+  padding: 0px 0px 0px 25px;
+}
 @media screen and (min-width:500px){
   .cards{
     display: grid;
