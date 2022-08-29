@@ -19,7 +19,7 @@ const Quotes = () => {
     />)
     return (
     <main className='quotes-main'>
-        <h2>Welcome, {values.name}</h2>
+        <h2>Welcome, {values.name}!👋🏿</h2>
         <h4>Get Motivated</h4>
         <div className='quotes-section'>
             {quotes}  

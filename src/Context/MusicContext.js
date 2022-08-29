@@ -4,7 +4,7 @@ export const MusicContext = createContext();
 const MusicContextProvider = (props) => {
     //Saves Api Data
     const [data, setData] = useState([]);
-
+    console.log(data);
     //Saves liked songs
     const [likedSong, setLikedSong] = useState([]);
     console.log(likedSong);
@@ -12,7 +12,7 @@ const MusicContextProvider = (props) => {
     // used to handle side effect of api calls 
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQDJsFzQXdDCzVsnKKNA1IoR3OfgAtjlH6BdZ7qt6aNM1Jjw23qTKIZzRrUhK1Hc9Na-0ACTXubQuSEyzxVvR0-yQD3YFgAo1tvpwd1TNNiFqBv3ghHVTjAjRyRg99jENjOoYEQ0cIyAW8aW050JX-8n--77Nil-bCIkgOdLCny6n7DXxzWAt6BNruzVr4w");
+        myHeaders.append("Authorization", "Bearer BQCfOGkiUzaLOzH2la7Spc8QviphicG7jWosqwAXR6V4eHb-gBx164snHjP_V41u2BIcvZfir2ih7Gk2sfi257diyVscALt2x_-2FUF5LA1LtBtYWLJdSBLy2_aH4kqtpzdxmQ-3N2qNmou5Dq0q2LwrUxuq0dNegr2DUGvbhkvw4cy_O-B5Lufay1J9S8Q");
 
         const requestOptions = {
             method: 'GET',
@@ -25,6 +25,7 @@ const MusicContextProvider = (props) => {
         .then(result => setData(result.albums.items))
         .catch(error => console.log('error', error))
     },[])
+
 
     return (
         <MusicContext.Provider value={{data,likedSong,setLikedSong}}>

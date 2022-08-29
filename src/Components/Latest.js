@@ -22,7 +22,7 @@ export default function Body(){
     return(
         <main id="music">
             <div className="info">
-                <h2>Welcome, {values.name}</h2>
+                <h2>Welcome, {values.name} !👋🏿</h2>
                 <h4>Featured</h4>
                 <p className="new">New Release from Spotify</p>
             </div>

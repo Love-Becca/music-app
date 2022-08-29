@@ -19,10 +19,17 @@ const Collection = () => {
                     <p>Adekunle Gold</p>
                 </div>
             </div>
-            <div className='recent-quotes'>
+            <div className='recent-quotes-collection'>
                 <div className='favorite-heading'>
                     <h3>Quotes</h3>
                     <p>View All</p>
+                </div>
+                <div className='recent-quotes'>
+                    <img src={banner} alt='banner' height={'60px'}  width='50px'/>
+                    <div className='quotes-collection'>
+                        <h2><cite>Albert Einstein</cite></h2>
+                        <p>Learn from yesterday, live for today, hope for tomorrow.</p>
+                    </div>
                 </div>
             </div>
         </main>
