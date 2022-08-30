@@ -4,7 +4,6 @@ export const MusicContext = createContext();
 const MusicContextProvider = (props) => {
     //Saves Api Data
     const [data, setData] = useState([]);
-    console.log(data);
     //Saves liked songs
     const [likedSong, setLikedSong] = useState([]);
     console.log(likedSong);
@@ -12,7 +11,7 @@ const MusicContextProvider = (props) => {
     // used to handle side effect of api calls 
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQBd4JeVLpxtfI5cGkjJaZWohXyfIe-T7AexgU6gJsLuqMbuEmsJ4HFaRQk0y5PNG_3K5ycH4lk8q979abp3VLIyFcKKgHRHE7Mc0F7txiBfOJRtbo8jivj9oBKEi7aBv8cRdk0h1YdUNvF8i554gf7AAY7euP1zq7w45tDiDaVB4oW-v_vu_yKnMTJ5pv4");
+        myHeaders.append("Authorization", "Bearer BQDwghAZ9OR2tb1qSJwVwDRitol5Ru9xPb0e4gNtEXA1YUj0hqZeObYY9B_fA0NpJwjuJEGAwWswGKN_Xy3ArtehAS4E--p9IsYCDcg9Yr2fyXlSv9ff5fP3ig1n4xeIw9SYGEZj27Yv834wP40F1qUbEKU88-abX1k1zOwNZPwd8Ye6dYPC3jr8kQvA5DU");
 
         const requestOptions = {
             method: 'GET',
