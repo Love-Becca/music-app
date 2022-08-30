@@ -20,6 +20,10 @@ const Collection = () => {
             }
         }
     }
+
+    const styles = {
+        gridTemplateColumns: musicData.length > 3 ?"auto auto auto auto":"none"    
+    }
     const musicSection = musicData.map(item=>
         <MusicCollection
         key={item.id}
@@ -35,7 +39,7 @@ const Collection = () => {
                     <h3>Music</h3>
                     <p>View All</p>
                 </div>
-                <div className='music-section'>
+                <div className='music-section' style={styles}>
                     {musicSection}
                 </div>
             </div>

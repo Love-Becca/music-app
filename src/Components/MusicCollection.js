@@ -1,6 +1,5 @@
 import React from 'react';
 import '../App.css';
-import banner from "../assets/music-display.png";
 
 const MusicCollection = (props) => {
     return ( 
