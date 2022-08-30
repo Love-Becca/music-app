@@ -22,7 +22,8 @@ const Collection = () => {
     }
 
     const styles = {
-        gridTemplateColumns: musicData.length > 3 ?"auto auto auto auto":"none"    
+        gridTemplateColumns: musicData.length > 3 ?"auto auto auto auto":"none",
+        
     }
     const musicSection = musicData.map(item=>
         <MusicCollection
