@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FormContext } from '../Context/FormContext';
 import '../App.css';
 import MusicCollection from './MusicCollection';
@@ -9,12 +9,12 @@ const Collection = () => {
     const {values} = useContext(FormContext)
     const {data,likedSong} = useContext(MusicContext);
     const unique =likedSong.filter((item,index)=>likedSong.indexOf(item)===index);
-    const musicData = [];
+    const [music, setMusic] = useState([]);
     for (let i = 0; i < unique.length; i++) {
         for (const item in data) {
             if (data.hasOwnProperty.call(data, item)) {
                 if (unique[i]===data[item].id) {
-                    musicData.push(data[item])
+                    music.push(data[item])
                 };
                 
             }
@@ -22,10 +22,9 @@ const Collection = () => {
     }
 
     const styles = {
-        gridTemplateColumns: musicData.length > 3 ?"auto auto auto auto":"none",
-        
+        gridTemplateColumns: music.length > 3 ?"auto auto auto auto":"none",        
     }
-    const musicSection = musicData.map(item=>
+    const musicSection = music.map(item=>
         <MusicCollection
         key={item.id}
         music = {item}
