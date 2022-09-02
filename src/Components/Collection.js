@@ -10,12 +10,11 @@ const Collection = () => {
     const {data,likedSong} = useContext(MusicContext);
     const unique =likedSong.filter((item,index)=>likedSong.indexOf(item)===index);
     const [music, setMusic] = useState([]);
+
     for (let i = 0; i < unique.length; i++) {
         for (const item in data) {
-            if (data.hasOwnProperty.call(data, item)) {
-                if (unique[i]===data[item].id) {
-                    music.push(data[item])
-                }
+            if (data.hasOwnProperty.call(data, item) && unique[i]===data[item].id) {
+                music.push(data[item])
             }
         }
     }
