@@ -15,8 +15,7 @@ const Collection = () => {
             if (data.hasOwnProperty.call(data, item)) {
                 if (unique[i]===data[item].id) {
                     music.push(data[item])
-                };
-                
+                }
             }
         }
     }
