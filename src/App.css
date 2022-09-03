@@ -442,6 +442,25 @@ error{
   display: grid;
   gap: 25px;
 }
+.slideShow{
+  display: flex; 
+  justify-content: space-between;
+  position: fixed;
+  top: 250px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.slideShow button{
+  background-color: whitesmoke;
+  outline: none;
+  border: none;
+  width: 25px;
+  height: 30px;
+  font-size: 1.3rem;
+  font-weight: bolder;
+
+}
 @media screen and (min-width:500px){
   .cards{
     display: grid;
