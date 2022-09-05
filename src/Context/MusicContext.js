@@ -11,7 +11,7 @@ const MusicContextProvider = (props) => {
     // used to handle side effect of api calls 
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQAI_nj8TVj_GO1F4AM46YqKe1VzGVM4n15Ey-kqnAgmNzo7iRiGxxR7zDYPzQqp3b0rQDJVO7xnWH5XsOenvw1ExVCaBJayiFy972xZ3psivpI3FEzdvoH5-ibCrUyD6YyQIXSPJSRnm6IVHZxJ0utkXwkHDdJGuH0CukYVXZ96J8HBgGGhJVQr8Ex4H5c");
+        myHeaders.append("Authorization", "Bearer BQADlJW6Gt9M5legzMqcFuaQJvE7W-SsxaxPmfhZFgrgeuzupRG96Jsj4J-xDKoHJ4PyuwrGicLDTaOYTAAiMvIJ45GkXxqvFJzUKiEBuOYHJK0anN53k_LFdTWrdH6ZAx_Q58ZvEojeeollh6w2SR7uh7PEtwbNgK2YaL-CMhkA2DlQeUGQzU4ZXpjOmF4");
 
         const requestOptions = {
             method: 'GET',

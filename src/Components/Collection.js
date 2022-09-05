@@ -4,6 +4,7 @@ import '../App.css';
 import MusicCollection from './MusicCollection';
 import QuotesCollection from './QuotesCollection';
 import { MusicContext } from '../Context/MusicContext';
+import { useEffect } from 'react';
 
 const Collection = () => {
     const {values} = useContext(FormContext);
@@ -11,14 +12,19 @@ const Collection = () => {
     const unique =likedSong.filter((item,index)=>likedSong.indexOf(item)===index);
     const [music, setMusic] = useState([]);
 
-    for (let i = 0; i < unique.length; i++) {
+    unique.forEach(element => {
         for (const item in data) {
-            if (data.hasOwnProperty.call(data, item) && unique[i]===data[item].id) {
+            if (Object.hasOwnProperty.call(data, item) && element===data[item].id) {
                 music.push(data[item]);
             }
         }
-    }
+    });
+    
+    useEffect(()=>{
+        music.filter((item, index)=>music.indexOf(item)===index);
 
+    },[music])
+    
     const styles = {
         gridTemplateColumns: music.length > 3 ?"auto auto auto auto":"none",        
     }
