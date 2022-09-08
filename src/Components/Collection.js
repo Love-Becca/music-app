@@ -12,19 +12,21 @@ const Collection = () => {
     const unique =likedSong.filter((item,index)=>likedSong.indexOf(item)===index);
     const [music, setMusic] = useState([]);
 
-    unique.forEach(element => {
-        for (const item in data) {
-            if (Object.hasOwnProperty.call(data, item) && element===data[item].id) {
-                music.push(data[item]);
-            }
+    const checking = ()=>{
+        for (let i = 0; i < unique.length; i++) {
+            for (const items of data) {
+                unique[i] === items.id ? setMusic(prevMusic => [...prevMusic,items]) : console.log("no");
+                console.log(music);
+            }  
         }
-    });
-    
-    useEffect(()=>{
-        music.filter((item, index)=>music.indexOf(item)===index);
-
-    },[music])
-    
+        
+    }    
+    console.log(checking());
+    // useEffect(()=>{
+    //     return()=>{
+    //         music.filter((item, index)=>music.indexOf(item)===index)
+    //     }
+    // },[music])
     const styles = {
         gridTemplateColumns: music.length > 3 ?"auto auto auto auto":"none",        
     }
