@@ -248,6 +248,9 @@ li{
   width: 32px;
   height: 32px;
   align-self: center;
+  position: absolute;
+  right: 10px;
+
 }
 
 .location-details{
@@ -258,6 +261,7 @@ li{
   align-self: center;
   color:whitesmoke;
   font-weight: 600;
+  width: 84%;
 }
 
 .event-time{

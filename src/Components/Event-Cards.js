@@ -5,7 +5,6 @@ import time from '../assets/time.png'
 
 
 export default function EventCards(events){
-    console.log(events);
     return (
         <div>
             <div className='event-date'>
