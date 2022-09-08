@@ -1,9 +1,17 @@
 import React from 'react';
-import '../App.css'
-import Cards from './Event-Cards'
+import '../App.css';
+import Cards from './Event-Cards';
+import {EventContext} from '../Context/EventContext'
+import { useContext } from 'react';
 
 
 export default function Event(){
+    const {event} = useContext(EventContext);
+    const eventCards = event.map(data=>
+    <Cards 
+    key={data.id}
+    events={data}
+    />) 
     return(
         <main className='event-body'>
             <div className="event">
@@ -12,7 +20,7 @@ export default function Event(){
             </div>
             <h3 className='live-event'>Live Events</h3>
             <div className='event-grid'>
-                <Cards />
+               {eventCards}
             </div>
         </main>
     )

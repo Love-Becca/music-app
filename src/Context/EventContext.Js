@@ -8,16 +8,17 @@ const EventContextProvider = (props) => {
 
     useEffect(() => {
         axios.get("https://event-reservation-system.herokuapp.com/api/all-events").then(res=>{
-            console.log(res);
+            setEvent(res.data.data.events);
         }).catch(err=>{
             console.log(err);
         })
     }, []);
+    
     return (  
-        <EventContextProvider value={{}}>
+        <EventContext.Provider value={{event}}>
             {props.children}
-        </EventContextProvider>
+        </EventContext.Provider>
     );
 }
  
-export default EventContext;
+export default EventContextProvider;

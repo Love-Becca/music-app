@@ -4,7 +4,8 @@ import location from '../assets/location.png'
 import time from '../assets/time.png'
 
 
-export default function EventCards(){
+export default function EventCards(events){
+    console.log(events);
     return (
         <div>
             <div className='event-date'>
@@ -14,15 +15,15 @@ export default function EventCards(){
                 <img src={banner} alt='banner' className='event-image' />
             </div>
             <div className='event-details'>
-                <h2 className='event-title'>Ogun Digital Summit</h2>
-                <p className='event-owner'>By Victor Adeleye</p>
+                <h2 className='event-title'>{events.events.event_name}</h2>
+                <p className='event-owner'>By {events.events.user.first_name} {events.events.user.last_name}</p>
                 <div className='event-location'>
                     <div className='event-location-details'>
-                        <p className='location-details'> Kuto Roundabout, Kuto, Abeokuta June 12 Cultural Centre</p>
+                        <p className='location-details'> {events.events.location}</p>
                         <img src={location} alt="location"className='location'  />
                     </div>
                     <div className='event-time'>
-                        <p className='event-time-details'><span>07:00PM</span> - <span>09:00PM</span></p>
+                        <p className='event-time-details'><span>{events.events.start_time}</span></p>
                         <img src={time} alt="time" className='time'/>
                     </div>
                 </div>

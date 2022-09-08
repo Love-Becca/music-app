@@ -8,8 +8,10 @@ import Error from './Components/Error';
 import Home from './Components/Home';
 import Quotes from './Components/Quotes';
 import QuotesContextProvider from './Context/QuotesContext';
-import MusicContextProvider from './Context/MusicContext'
+import MusicContextProvider from './Context/MusicContext';
+import EventContextProvider from './Context/EventContext'
 import FormContextProvider from './Context/FormContext';
+
 import Collection from './Components/Collection'
 
 function App() {
@@ -18,18 +20,20 @@ function App() {
       <FormContextProvider>
         <MusicContextProvider>
           <QuotesContextProvider>
-            <Router>
-              <Routes>
-                <Route path='/' element={<Header />}>
-                  <Route index element={<Home />}/>
-                  <Route path='music' element={<Body />}/>
-                  <Route path='events' element={<Programs />}/>
-                  <Route path='quotes' element={<Quotes />}/>
-                  <Route path='collection' element={<Collection/>}/>
-                  <Route path='*' element={<Error />}/>
-                </Route>
-              </Routes>
-            </Router>
+            <EventContextProvider>
+              <Router>
+                <Routes>
+                  <Route path='/' element={<Header />}>
+                    <Route index element={<Home />}/>
+                    <Route path='music' element={<Body />}/>
+                    <Route path='events' element={<Programs />}/>
+                    <Route path='quotes' element={<Quotes />}/>
+                    <Route path='collection' element={<Collection/>}/>
+                    <Route path='*' element={<Error />}/>
+                  </Route>
+                </Routes>
+              </Router>
+            </EventContextProvider>
           </QuotesContextProvider>
         </MusicContextProvider>
       </FormContextProvider>
