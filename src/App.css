@@ -1,3 +1,4 @@
+
 .header{
   display: flex;
   background-color: rgb(5, 130, 233);
@@ -7,6 +8,7 @@
   justify-content:space-between;
   font-family: 'Readex Pro';
 }
+
 
 .logo{
   width: 38px;
@@ -163,14 +165,13 @@ li{
 }
 
 .event-body{
-  background-color: white;
-  margin-top: 1px;
+  background-color:rgb(4, 91, 163);
   padding: 10px;
 }
 
 .event-image{
   height: 22rem;
-  width: 18.5rem;
+  width: 296px;
   border-radius: 20px;
   margin-top: -50px;
   
@@ -183,7 +184,7 @@ li{
   border-radius: 10px;
   color: whitesmoke;
   text-align: center;
-  height: 9.5vh;
+  height: 50px;
   position: relative;
   top: 17px;
   left: 15px;
@@ -194,8 +195,8 @@ li{
 }
 
 .event-grid{
-  display: grid;
-  grid-template-columns: auto;
+  display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
 }
@@ -209,7 +210,7 @@ li{
 }
 
 .event h4{
-  color: rgb(4, 91, 163);
+  color: white;
 }
 .event-info{
   color: rgb(138, 136, 136);
@@ -217,7 +218,7 @@ li{
 }
 
 .live-event{
-  color: rgb(4, 91, 163);
+  color: white;
 }
 
 .event-details{
@@ -227,6 +228,7 @@ li{
   border: 2px solid rgb(4, 91, 163);
   position: relative;
   bottom: 58px;
+  max-width: 296px;
 }
 
 .event-location-details{
@@ -493,7 +495,7 @@ error{
 }
 
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:769px) {
   .hamburger,.close{
     display: none;
   }
@@ -561,4 +563,13 @@ error{
   
 
   
+}
+
+@media screen and (min-width:769px) and (max-width:900px){
+  .header{
+    margin-right: -90px;
+  }
+  main{
+    margin-right: -90px;
+  }
 }

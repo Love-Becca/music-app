@@ -10,23 +10,23 @@ const Collection = () => {
     const {values} = useContext(FormContext);
     const {data,likedSong} = useContext(MusicContext);
     const unique =likedSong.filter((item,index)=>likedSong.indexOf(item)===index);
-    const [music, setMusic] = useState([]);
+    const [music, setMusic] = useState(()=>{
+        const savedMusic = localStorage.getItem('music');
+        return savedMusic ? JSON.parse(savedMusic): []
+    });
 
-    const checking = ()=>{
-        for (let i = 0; i < unique.length; i++) {
-            for (const items of data) {
-                unique[i] === items.id ? setMusic(prevMusic => [...prevMusic,items]) : console.log("no");
-                console.log(music);
-            }  
-        }
+    // for (let i = 0; i < unique.length; i++) {
+    //     for (const items of data) {
+    //         if (unique[i] === items.id) {
+    //             setMusic(items)
+    //         }
+    //     }  
+    // }   
+    useEffect(()=>{
+        localStorage.setItem('music', JSON.stringify(music));
+    },[music])
+
         
-    }    
-    console.log(checking());
-    // useEffect(()=>{
-    //     return()=>{
-    //         music.filter((item, index)=>music.indexOf(item)===index)
-    //     }
-    // },[music])
     const styles = {
         gridTemplateColumns: music.length > 3 ?"auto auto auto auto":"none",        
     }
