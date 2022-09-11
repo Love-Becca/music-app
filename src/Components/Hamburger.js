@@ -8,6 +8,12 @@ export default function Navigate(){
         isOpen: false
     })
 
+    const[navTitle, setNavTitle] = useState({
+        home:"HOME",
+        music:"MUSIC",
+        Quote:"QUOTE",
+        
+    })
     function open(){
         setToggle(prevToggle=>{
             return{
@@ -15,6 +21,12 @@ export default function Navigate(){
                 isOpen:!toggle.isOpen
             }  
         })
+    }
+    if (window.location.href.includes("music")) {
+        console.log("got");
+
+    }else{
+        console.log("no");
     }
 
     return(

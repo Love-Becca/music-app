@@ -3,7 +3,15 @@ export const MusicContext = createContext();
 
 const MusicContextProvider = (props) => {
     //Saves Api Data
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(()=>{
+        const savedData = localStorage.getItem('data');
+        return savedData ? JSON.parse(savedData): [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem('data', JSON.stringify(data))
+    }, [data]);
+
     //Saves liked songs
     const [likedSong, setLikedSong] = useState(()=>{
         const change = localStorage.getItem('liked');
@@ -13,6 +21,7 @@ const MusicContextProvider = (props) => {
     useEffect(() => {
         localStorage.setItem('liked', JSON.stringify(likedSong))
     }, [likedSong]);
+    
     // used to handle side effect of api calls 
     useEffect(()=>{
         const myHeaders = new Headers();

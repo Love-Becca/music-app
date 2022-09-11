@@ -15,13 +15,13 @@ const Collection = () => {
         return savedMusic ? JSON.parse(savedMusic): []
     });
 
-    // for (let i = 0; i < unique.length; i++) {
-    //     for (const items of data) {
-    //         if (unique[i] === items.id) {
-    //             setMusic(items)
-    //         }
-    //     }  
-    // }   
+    for (let i = 0; i < unique.length; i++) {
+        for (const items of data) {
+            if (unique[i] === items.id) {
+                music.push(items)
+            }
+        }  
+    }   
     useEffect(()=>{
         localStorage.setItem('music', JSON.stringify(music));
     },[music])
