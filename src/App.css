@@ -1,4 +1,12 @@
-
+.home-header{
+  display: flex;
+  background-color: rgb(5, 130, 233);
+  font-size: 0.65rem;
+  color: white;
+  box-shadow: 0px 0px 7px rgb(121, 120, 120);
+  font-family: 'Readex Pro';
+  justify-content: flex-start;
+}
 .header{
   display: flex;
   background-color: rgb(5, 130, 233);
@@ -9,7 +17,13 @@
   font-family: 'Readex Pro';
 }
 
+.no-nav{
+  display: none;
+}
 
+.yes-nav{
+  display: block
+}
 .logo{
   width: 38px;
   margin-right: 33vw;
@@ -20,13 +34,12 @@
   margin-left: -50px;
   text-align: center;
   text-transform: uppercase;
-  
+  width: 35%;
 }
 
 #music{
   background-color:rgb(4, 91, 163);
   padding: 5px 10px;
-
 }
 
 .music-image{
@@ -64,6 +77,7 @@
   grid-template-columns: auto auto;
   gap: 20px;
   justify-content: center;
+
 }
 
 .like{
@@ -161,10 +175,11 @@ li{
 .close-bar{
   background-color: transparent;
   width: 50vw;
-  position:fixed;
+  position:absolute;
   margin-left: -25px;
-  height: 100vh;
+  height: 200px;
   padding: 5px;
+
 }
 
 .event-body{
@@ -562,6 +577,9 @@ error{
   #sign-in{
     width: 10vw;
     height: 5vh;
+  }
+  .home{
+    width: 15%;
   }
   
 

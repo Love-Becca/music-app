@@ -12,13 +12,17 @@ const Collection = () => {
 
     // liked songs
     const {data,likedSong} = useContext(MusicContext);
-    
+
+    //filters the liked song array to make it unique
     const unique =likedSong.filter((item,index)=>likedSong.indexOf(item)===index);
+
+    //saves the collection music data
     const [music, setMusic] = useState(()=>{
         const savedMusic = JSON.parse(localStorage.getItem(`musicToMap`));
         return savedMusic || [];
     });
 
+    //handles for loop
     useEffect(() => {
         for (const items of data) {
             unique.forEach(element => {
@@ -30,8 +34,11 @@ const Collection = () => {
         }  
     }, []);
 
+
+//filters the collection array
     const musicToMap = music.filter((item, index)=>music.indexOf(item)===index);
 
+// saves music to localStorage
     useEffect(()=>{
         localStorage.setItem('music', JSON.stringify(musicToMap));
     },[musicToMap])
