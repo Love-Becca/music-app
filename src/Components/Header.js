@@ -1,33 +1,29 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import logo from "../assets/music-logo.svg"
 import '../App.css'
 import Navigate from "./Hamburger"
 import {Outlet} from 'react-router-dom';
 
 export default function Header(){
-    let display;
-    const[navTitle, setNavTitle] = useState({
+    const [display, setdisplay] = useState("");
+    const navTitle =  {
         home:"home",
         music:"music",
         quote:"quotes",
         events: "events",
         collection: "collection"
-    });
+    }
 
-    function handleNAv() {
+    useEffect(() => {
         for (const items in navTitle) {
             if (navTitle.hasOwnProperty.call(navTitle, items)) {
                 if (window.location.href.includes(navTitle[items])) {
-                    display = navTitle[items] 
+                    setdisplay(navTitle[items])
                 }
                 
             }
         }
-        
-    }
-    handleNAv()
-    
-    console.log(display);
+    }, []);
     return (
         <header>
             <div className="header">
