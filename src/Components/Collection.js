@@ -7,30 +7,40 @@ import { MusicContext } from '../Context/MusicContext';
 import { useEffect } from 'react';
 
 const Collection = () => {
+    // clients data
     const {values} = useContext(FormContext);
+
+    // liked songs
     const {data,likedSong} = useContext(MusicContext);
+    
     const unique =likedSong.filter((item,index)=>likedSong.indexOf(item)===index);
     const [music, setMusic] = useState(()=>{
-        const savedMusic = localStorage.getItem('music');
-        return savedMusic ? JSON.parse(savedMusic): []
+        const savedMusic = JSON.parse(localStorage.getItem(`musicToMap`));
+        return savedMusic || [];
     });
 
-    for (let i = 0; i < unique.length; i++) {
+    useEffect(() => {
         for (const items of data) {
-            if (unique[i] === items.id) {
-                music.push(items)
-            }
+            unique.forEach(element => {
+                if (element === items.id) {
+                    setMusic(prevMusic=>[...prevMusic,items])
+                }
+            });
+            
         }  
-    }   
+    }, []);
+
+    const musicToMap = music.filter((item, index)=>music.indexOf(item)===index);
+
     useEffect(()=>{
-        localStorage.setItem('music', JSON.stringify(music));
-    },[music])
+        localStorage.setItem('music', JSON.stringify(musicToMap));
+    },[musicToMap])
 
         
     const styles = {
         gridTemplateColumns: music.length > 3 ?"auto auto auto auto":"none",        
     }
-    const musicSection = music.map(item=>
+    const musicSection = musicToMap.map(item=>
         <MusicCollection
         key={item.id}
         music = {item}
