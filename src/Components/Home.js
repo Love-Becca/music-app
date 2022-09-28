@@ -20,10 +20,10 @@ const Home = () => {
    
     return (
         <main className='form-page'>
-            <h2 className='welcome-txt'>Welcome!</h2>
             <div className='form'> 
                 <img src={welcome} alt='welcome'  className='welcome'/>
                 <form onSubmit={handleSubmit(onSubmit)}>
+                    <h2 className='welcome-txt'>Welcome!</h2>
                     <label>First Name:</label>
                     <input 
                         type='text'

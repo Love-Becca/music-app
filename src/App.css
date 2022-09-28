@@ -376,6 +376,7 @@ li{
 
 .quotes-main{
   padding: 5px;
+  background-color: rgba(5, 130, 233, 0.555);
 }
 
 blockquote{
@@ -392,7 +393,7 @@ label{
 input{
   display: block;
   width: 90vw;
-  height: 5vh;
+  height: 25px;
   border: 2px solid rgba(196, 196, 196, 0.664);
   border-radius: 5px;
   outline: none;
@@ -404,11 +405,6 @@ input{
   justify-content: center;
 }
 
-.form-page{
-  background-color: rgb(4, 91, 163);
-  margin-top: -20px;
-  height: 100vh;
-}
 #sign-in{
   display: block;
   background-color: whitesmoke;
@@ -422,11 +418,16 @@ input{
 }
 .welcome-txt{
   display: none;
-  color:rgb(4, 91, 163);
+  color: whitesmoke;
 }
 
 form{
+  margin: 0 auto;
   padding: 10px;
+}
+
+.form-page{
+  background-color: rgb(4, 91, 163);
 }
 
 error{
@@ -537,6 +538,7 @@ error{
     width:90vw;
     height: 13vh;
   }
+ 
 }
 
 
@@ -571,25 +573,27 @@ error{
     width:40vw;
     height: 13vh;
   }
+  .form-page{
+    height: 100vh;
+  }
 
-  .form{
-    margin: 0 auto;
-    width: 60vw;
-    flex-direction: row-reverse;
-    margin-top: 30px;
-    border-radius: 15px;
-    box-shadow: 0px 0px 7px rgba(196, 196, 196, 0.664);
-
+  form{
+    width: 500px;
+    border-radius: 0px;
+    background-color: white;
+    height: 550px;
+    margin-top: 50px;
+    padding: 10px 20px;
   }
   .welcome{
-    width: 30vw;
-    border-radius: 0px 10px 10px 0px;
-    margin-left: 0px;
+    display: none;
   }
 
   input{
-    width: 28vw;
+    max-width: 450px;
     height: 5vh;
+    margin: 0 auto;
+    margin-bottom: 20px;
   }
 
   label{
@@ -599,11 +603,15 @@ error{
 
   .welcome-txt{
     display: block;
+    color: rgb(4, 91, 163);
   }
 
   #sign-in{
     width: 10vw;
     height: 5vh;
+    color: white;
+    background-color: rgb(4, 91, 163);
+    margin-top: 20px;
   }
   .home{
     width: 15%;
