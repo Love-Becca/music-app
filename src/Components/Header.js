@@ -10,7 +10,7 @@ export default function Header(){
     // to get the location
     const location = useLocation();
     //dynamic header, the title changes as user switch pages
-    const displayMemo= useMemo(()=>{
+    useMemo(()=>{
         const navTitle =  {
             music:"music",
             quote:"quotes",

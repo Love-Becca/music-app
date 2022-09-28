@@ -11,8 +11,7 @@ import QuotesContextProvider from './Context/QuotesContext';
 import MusicContextProvider from './Context/MusicContext';
 import EventContextProvider from './Context/EventContext'
 import FormContextProvider from './Context/FormContext';
-
-import Collection from './Components/Collection'
+// import Collection from './Components/Collection'
 
 function App() {
   return (

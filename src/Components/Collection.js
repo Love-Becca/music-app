@@ -32,7 +32,7 @@ const Collection = () => {
             });
             
         }  
-    }, []);
+    }, [data, unique]);
 
 
 //filters the collection array
