@@ -30,7 +30,7 @@ export default function Navigate(){
                     <NavLink to='music' className={({isActive}) =>isActive? 'active': 'link'}><li>Music</li></NavLink>
                     <NavLink to='quotes' className={({isActive}) =>isActive? 'active': 'link'}><li>Quotes</li></NavLink>
                     <NavLink to='events' className={({isActive}) =>isActive? 'active': 'link'}><li>Events</li></NavLink>
-                    <NavLink to='collection' className={({isActive}) =>isActive? 'active': 'link'}><li>collection</li></NavLink>
+                    {/* <NavLink to='collection' className={({isActive}) =>isActive? 'active': 'link'}><li>collection</li></NavLink> */}
                 </ul>
             </div>
             

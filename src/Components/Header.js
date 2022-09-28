@@ -1,4 +1,4 @@
-import React, { useState,useEffect,useCallback } from "react";
+import React, { useState} from "react";
 import logo from "../assets/music-logo.svg"
 import '../App.css'
 import Navigate from "./Hamburger"
@@ -7,8 +7,9 @@ import { useMemo } from "react";
 
 export default function Header(){
     const [display, setDisplay] = useState("");
+    // to get the location
     const location = useLocation();
-    // need to clean this up
+    //dynamic header, the title changes as user switch pages
     const displayMemo= useMemo(()=>{
         const navTitle =  {
             music:"music",
@@ -21,14 +22,19 @@ export default function Header(){
                 setDisplay(navTitle[item])
             }
         }
-    },[location.pathname])
+    },[location.pathname]);
 
-
+    const styles = {
+        width: location.pathname === '/'?'100%':'15%',
+    }
+    const homestyles ={
+        marginRight: location.pathname === '/'?'-10px':'130px'
+    }
     return (
         <header>
             <div className={display==="HOME"? "home-header":"header"}>
-                <img src={logo} alt="logo" className="logo"/>
-                <h1 className="home">{location.pathname ==='/'?"HOME":display}</h1>
+                <img src={logo} alt="logo" className="logo" style={homestyles}/>
+                <h1 className="home" style={styles}>{location.pathname ==='/'?"HOME":display}</h1>
                 <div className={location.pathname==="/"? "no-nav":"yes-nav"}>
                     <Navigate />
                 </div>

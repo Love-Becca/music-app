@@ -28,7 +28,7 @@ function App() {
                     <Route path='music' element={<Body />}/>
                     <Route path='events' element={<Programs />}/>
                     <Route path='quotes' element={<Quotes />}/>
-                    <Route path='collection' element={<Collection/>}/>
+                    {/* <Route path='collection' element={<Collection/>}/> */}
                     <Route path='*' element={<Error />}/>
                   </Route>
                 </Routes>

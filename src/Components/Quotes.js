@@ -9,8 +9,6 @@ const Quotes = () => {
     const {data} = useContext(QuotesContext);
     const {values} = useContext(FormContext);
 
-
-
     const quotes = data.map(quote=>
     <QuotesCards
         key={nanoid()}

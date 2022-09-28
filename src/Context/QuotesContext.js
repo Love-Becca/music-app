@@ -7,7 +7,7 @@ const QuotesContextProvider = (props) => {
     useEffect(()=>{
         fetch("https://type.fit/api/quotes")
         .then(response => response.json())
-        .then(data => setData(data.slice(50,75)))
+        .then(data => setData(data.slice(50,74)))
         .catch(err => console.error(err)) 
     })   
     

@@ -393,7 +393,7 @@ label{
 input{
   display: block;
   width: 90vw;
-  height: 25px;
+  height: 35px;
   border: 2px solid rgba(196, 196, 196, 0.664);
   border-radius: 5px;
   outline: none;
@@ -564,8 +564,8 @@ error{
   }
 
   .quotes-section{
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1px;
   }
 

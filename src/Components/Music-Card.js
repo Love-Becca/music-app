@@ -28,6 +28,7 @@ export default function Cards({song,likedSong,setLikedSong}){
         isOpen: false
     });
 
+    // to toggle the height of the content
     const size = useCallback(() => {
         setToggle(prevToggle=>{
             return{
