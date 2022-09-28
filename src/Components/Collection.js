@@ -9,12 +9,12 @@ import { useEffect } from 'react';
 const Collection = () => {
     // clients data
     const {values} = useContext(FormContext);
-
     // liked songs
     const {data,likedSong} = useContext(MusicContext);
 
     //filters the liked song array to make it unique
     const unique =likedSong.filter((item,index)=>likedSong.indexOf(item)===index);
+
 
     //saves the collection music data
     const [music, setMusic] = useState(()=>{

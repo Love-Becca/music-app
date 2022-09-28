@@ -25,7 +25,7 @@ const MusicContextProvider = (props) => {
     // used to handle side effect of api calls 
     useEffect(()=>{
         const myHeaders = new Headers();
-        myHeaders.append("Authorization", "Bearer BQBfnvek-cEikVwaZQyY_jgCTaxT49nKI38nzeLvqW6MjQQj9_GfWfvHUJcX0-WnPNDoxZy71rWrYCgXsXGRW_GL8FFiIL2iizR0nvco4Y0K8EgNWqiQERfQEsTvUKGtQyQUntS2GDZNAEWx8jUOA0kxoiXQihJP-2mitCVyEZMyh0yjfKgfpskaFIeuzXo");
+        myHeaders.append("Authorization", "Bearer BQBxDgw0djCq1w68b42SqgrKorN03-jyBz97hS7M0gq8gp4P5ayX3WPqlddxvQ8DQ8gjLDfPAxQeK1w72km-xy7ieKzy9mztuQOe6OP36FR4fpGUsQWzqmvWsASd_x1Wt_iS19N_8oUvWt06EDvGiuRjIp_Bndn0ARZoA2Rs0OOb__K9i2zm-3uWjf6Ja5w");
 
         const requestOptions = {
             method: 'GET',
@@ -33,7 +33,7 @@ const MusicContextProvider = (props) => {
             redirect: 'follow'
         };
         
-        fetch("https://api.spotify.com/v1/browse/new-releases?country=NG&limit=50&offset=10", requestOptions)
+        fetch("https://api.spotify.com/v1/browse/new-releases?country=NG&limit=50&offset=0", requestOptions)
         .then(response => response.json())
         .then(result => setData(result.albums.items))
         .catch(error => console.log('error', error))

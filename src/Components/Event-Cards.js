@@ -1,10 +1,23 @@
-import React from 'react';
+import React,{useState,useCallback} from 'react';
 import banner from '../assets/music-display.png'
 import location from '../assets/location.png'
 import time from '../assets/time.png'
 
 
 export default function EventCards(events){
+    const [toggle, setToggle] = useState({
+        isOpen: false
+    });
+
+    const show = useCallback(() => {
+        setToggle(prevToggle=>{
+            return{
+                ...prevToggle,
+                isOpen: !toggle.isOpen
+            }
+        })
+    }, [toggle.isOpen]);
+
     return (
         <div>
             <div className='event-date'>
@@ -13,7 +26,7 @@ export default function EventCards(events){
             <div>
                 <img src={banner} alt='banner' className='event-image' />
             </div>
-            <div className='event-details'>
+            <div className={toggle.isOpen?'event-details-open':'event-details'} onClick={show}>
                 <h2 className='event-title'>{events.events.event_name}</h2>
                 <p className='event-owner'>By {events.events.user.first_name} {events.events.user.last_name}</p>
                 <div className='event-location'>

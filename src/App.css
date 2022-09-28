@@ -51,7 +51,17 @@
 
 .music-details{
   width: 136px;
-  height:170px;
+  height:130px;
+  overflow: hidden;
+  background-color: whitesmoke;
+  border-radius: 0px 0px 5px 5px;
+  margin-top: -25px;
+  padding: 10px 7px;
+}
+
+.music-details-open{
+  width: 136px;
+  height:auto;
   background-color: whitesmoke;
   border-radius: 0px 0px 5px 5px;
   margin-top: -25px;
@@ -247,8 +257,20 @@ li{
   position: relative;
   bottom: 58px;
   max-width: 296px;
+  max-height: 140px;
+  overflow-y: hidden;
 }
 
+.event-details-open{
+  background-color: rgba(138, 136, 136, 0.336);
+  border-radius: 20px;
+  padding: 5px;
+  border: 2px solid rgb(4, 91, 163);
+  position: relative;
+  bottom: 58px;
+  max-width: 296px;
+  height: auto;
+}
 .event-location-details{
   background-color: rgba(5, 130, 233, 0.555);
   display: flex;
@@ -382,13 +404,18 @@ input{
   justify-content: center;
 }
 
+.form-page{
+  background-color: rgb(4, 91, 163);
+  margin-top: -20px;
+  height: 100vh;
+}
 #sign-in{
   display: block;
-  background-color: rgb(4, 91, 163);
+  background-color: whitesmoke;
   border: none;
   width: 30vw;
   height: 8vh;
-  color: rgb(228, 227, 227);
+  color: rgb(4, 91, 163);
   border-radius: 5px;
   margin: 5px 0px;
   font-size: 1rem;
@@ -487,8 +514,8 @@ error{
 }
 @media screen and (min-width:500px){
   .cards{
-    display: grid;
-    grid-template-columns: auto auto auto;
+    display: flex;
+    flex-wrap: wrap;
     gap: 3vw;
     justify-content: center;
   }
