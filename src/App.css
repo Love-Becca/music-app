@@ -184,9 +184,8 @@ li{
 
 .close-bar{
   background-color: transparent;
-  width: 50vw;
   position:absolute;
-  margin-left: -25px;
+  margin-left: 10px;
   height: 200px;
   padding: 5px;
 
