@@ -9,7 +9,7 @@ import Home from './Components/Home';
 import Quotes from './Components/Quotes';
 import QuotesContextProvider from './Context/QuotesContext';
 import MusicContextProvider from './Context/MusicContext';
-import EventContextProvider from '../src/Context/EventContext';
+import EventContextProvider from './Context/EventContext';
 import FormContextProvider from './Context/FormContext';
 // import Collection from './Components/Collection'
 
