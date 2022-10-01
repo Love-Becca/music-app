@@ -48,7 +48,7 @@ export default function Cards({song,likedSong,setLikedSong}){
                     <img src={isLike.isFavorite ? favorite : like} alt="like"  className="like" onClick={changeImage}/>
                 </div>
                 <p className="release_date">{song.release_date}</p>
-                <button className="play_Button"><a href={song.external_urls.spotify}>Click to play</a></button>
+                <button className="play_Button"><a href={song.external_urls.spotify} title="Spotify">Click to play</a></button>
             </div>
         </div>
     )
