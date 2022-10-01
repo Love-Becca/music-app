@@ -17,9 +17,9 @@ function App() {
   return (
     <div className="App">
       <FormContextProvider>
-        <MusicContextProvider>
-          <QuotesContextProvider>
-            <EventContextProvider>
+        <EventContextProvider>
+          <MusicContextProvider>
+            <QuotesContextProvider>
               <Router>
                 <Routes>
                   <Route path='/' element={<Header />}>
@@ -32,9 +32,9 @@ function App() {
                   </Route>
                 </Routes>
               </Router>
-            </EventContextProvider>
-          </QuotesContextProvider>
-        </MusicContextProvider>
+            </QuotesContextProvider>
+          </MusicContextProvider>
+        </EventContextProvider>
       </FormContextProvider>
     </div>
   );
