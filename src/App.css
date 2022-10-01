@@ -428,6 +428,7 @@ form{
 
 .form-page{
   background-color: rgb(4, 91, 163);
+  height: 100vh;
 }
 
 error{
