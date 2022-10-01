@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { createContext } from 'react';
 import axios from 'axios';
-export const EventContext = createContext();
+export const EventsContext = createContext();
 
-const EventContextProvider = (props) => {
+const EventsContextProvider = (props) => {
     const [event, setEvent] = useState([]);
 
     useEffect(() => {
@@ -15,10 +15,10 @@ const EventContextProvider = (props) => {
     }, []);
     
     return (  
-        <EventContext.Provider value={{event}}>
+        <EventsContext.Provider value={{event}}>
             {props.children}
-        </EventContext.Provider>
+        </EventsContext.Provider>
     );
 }
  
-export default EventContextProvider;
+export default EventsContextProvider;

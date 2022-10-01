@@ -9,7 +9,7 @@ import Home from './Components/Home';
 import Quotes from './Components/Quotes';
 import QuotesContextProvider from './Context/QuotesContext';
 import MusicContextProvider from './Context/MusicContext';
-import EventContextProvider from './Context/EventContext';
+import EventsContextProvider from './Context/EventsContext';
 import FormContextProvider from './Context/FormContext';
 // import Collection from './Components/Collection'
 
@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <FormContextProvider>
-        <EventContextProvider>
+        <EventsContextProvider>
           <MusicContextProvider>
             <QuotesContextProvider>
               <Router>
@@ -34,7 +34,7 @@ function App() {
               </Router>
             </QuotesContextProvider>
           </MusicContextProvider>
-        </EventContextProvider>
+        </EventsContextProvider>
       </FormContextProvider>
     </div>
   );

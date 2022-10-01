@@ -1,12 +1,12 @@
 import React from 'react';
 import '../App.css';
 import Cards from './Event-Cards';
-import {EventContext} from '../Context/EventContext'
+import {EventsContext} from '../Context/EventsContext'
 import { useContext } from 'react';
 
 
 export default function Event(){
-    const {event} = useContext(EventContext);
+    const {event} = useContext(EventsContext);
     const eventCards = event.map(data=>
     <Cards 
     key={data.id}
